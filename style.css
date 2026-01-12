@@ -1,0 +1,107 @@
+@layer global {
+	/* outfit-regular - latin */
+	@font-face {
+		font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+		font-family: 'Outfit';
+		font-style: normal;
+		font-weight: 400;
+		src: url('/fonts/outfit-v15-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+	}
+	/* outfit-700 - latin */
+	@font-face {
+		font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+		font-family: 'Outfit';
+		font-style: normal;
+		font-weight: 700;
+		src: url('/fonts/outfit-v15-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+	}
+
+	/* Fonts */
+	:root {
+		--fs-15: calc(15 / 16 * 1rem);
+		--fs-22: calc(22 / 16 * 1rem);
+
+		--font-size-h1: var(--fs-22);
+		--font-size-p: var(--fs-15);
+	}
+
+	/* Colors */
+	:root {
+		--c-white: hsl(0, 0%, 100%);
+		--c-slate-900: hsl(218, 44%, 22%);
+		--c-slate-500: hsl(216, 15%, 48%);
+		--c-slate-300: hsl(212, 45%, 89%);
+
+		--color-main-bg: var(--c-slate-300);
+		--color-h1: var(--c-slate-900);
+		--color-p: var(--c-slate-500);
+	}
+
+	*, *::before, *::after {
+		box-sizing: border-box;
+	}
+
+	* {
+		margin: 0;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	img, picture, svg {
+		max-width: 100%;
+		display: block;
+	}
+
+	body {
+		font-family: 'Outfit', sans-serif;
+		background-color: var(--color-main-bg);
+	}
+
+	h1 {
+		font-size: var(--font-size-h1);
+		line-height: 1.2;
+		letter-spacing: 0;
+		color: var(--color-h1);
+	}
+
+	p {
+		font-size: var(--font-size-p);
+		line-height: 1.4;
+		letter-spacing: 0.2px;
+		color: var(--color-p);
+	}
+
+	.wrapper {
+		/*margin-inline: auto;
+		max-width: 1440px;*/
+	}
+}
+
+@layer components {
+	.qr-code {
+		/*display: flex;*/
+		/*align-items: center;*/
+		/*justify-content: center;*/
+		/*column-gap: calc(24 / 16 * 1rem);*/
+		/*padding: 16px 16px 40px 16px;*/
+		/*background-color: var(--c-white);*/
+
+		.qr-code__wrapper {
+			width: 320px;
+			height: 499px;
+			text-align: center;
+			background-color: var(--c-white);
+			/*margin: 230.5px 560px;*/
+			border-radius: 20px;
+
+			.qr-code__img {
+				width: 288px;
+				height: 288px;
+				margin: 16px 16px 24px 16px;
+				border-radius: 10px;
+			}
+		}
+	}
+}
