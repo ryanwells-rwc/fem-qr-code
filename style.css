@@ -5,7 +5,7 @@
 		font-family: 'Outfit';
 		font-style: normal;
 		font-weight: 400;
-		src: url('/fonts/outfit-v15-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+		src: url('./fonts/outfit-v15-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 	}
 	/* outfit-700 - latin */
 	@font-face {
@@ -13,7 +13,7 @@
 		font-family: 'Outfit';
 		font-style: normal;
 		font-weight: 700;
-		src: url('/fonts/outfit-v15-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+		src: url('./fonts/outfit-v15-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 	}
 
 	/* Fonts */
@@ -45,62 +45,66 @@
 		margin: 0;
 	}
 
-	a {
-		text-decoration: none;
-	}
-
-	img, picture, svg {
-		max-width: 100%;
-		display: block;
-	}
-
 	body {
 		font-family: 'Outfit', sans-serif;
 		background-color: var(--color-main-bg);
 	}
 
-	h1 {
-		font-size: var(--font-size-h1);
-		line-height: 1.2;
-		letter-spacing: 0;
-		color: var(--color-h1);
+	a {
+		text-decoration: none;
 	}
 
-	p {
-		font-size: var(--font-size-p);
-		line-height: 1.4;
-		letter-spacing: 0.2px;
-		color: var(--color-p);
+	img {
+		max-width: 100%;
+		display: block;
+		height: auto;
 	}
 
 	.wrapper {
-		/*margin-inline: auto;
-		max-width: 1440px;*/
+		width: min(calc(100% - 55px), calc(1440 / 16 * 1rem));
+		margin-inline: auto;
 	}
 }
 
-@layer components {
+@layer component {
 	.qr-code {
-		/*display: flex;*/
-		/*align-items: center;*/
-		/*justify-content: center;*/
-		/*column-gap: calc(24 / 16 * 1rem);*/
-		/*padding: 16px 16px 40px 16px;*/
-		/*background-color: var(--c-white);*/
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100vh;
 
 		.qr-code__wrapper {
 			width: 320px;
 			height: 499px;
-			text-align: center;
 			background-color: var(--c-white);
-			/*margin: 230.5px 560px;*/
+			padding: 16px;
 			border-radius: 20px;
+		}
 
-			.qr-code__img {
-				width: 288px;
-				height: 288px;
-				margin: 16px 16px 24px 16px;
-				border-radius: 10px;
+		.qr-code__img {
+			width: 288px;
+			border-radius: 10px;
+		}
+
+		.qr-code__text {
+			padding: 24px 16px 40px 16px;
+			text-align: center;
+
+			.qr-code__title {
+				font-size: var(--font-size-h1);
+				line-height: 1.2;
+				letter-spacing: 0;
+				color: var(--color-h1);
+				font-weight: 700;
+				margin-bottom: 16px;
+			}
+
+			.qr-code__description {
+				font-size: var(--font-size-p);
+				line-height: 1.4;
+				letter-spacing: 0.2px;
+				color: var(--color-p);
+				font-weight: 400;
 			}
 		}
 	}
