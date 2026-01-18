@@ -96,7 +96,7 @@
 				letter-spacing: 0;
 				color: var(--color-h1);
 				font-weight: 700;
-				margin-bottom: 16px;
+				margin-block-end: 16px;
 			}
 
 			.qr-code__description {
